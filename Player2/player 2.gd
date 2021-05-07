@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+signal health_updated(health)
+signal killed()
+
+
 var move = Vector2()
 export var speed: = Vector2(300.0, 1000.0)
 #var jump_speed = -400
@@ -9,6 +13,11 @@ export var fall_speed = 1.0
 var _velocity: = Vector2.ZERO
 const FLOOR_NORMAL: = Vector2.UP
 
+#Hp
+export (float) var max_health = 100;
+onready var health = max_health setget _set_health
+onready var invulnerability_timer = $InvulnerabilityTimer
+onready var Hitbox = $Hitbox
 
 	
 	
@@ -47,8 +56,27 @@ func calculate_move_velocity(
 			move.y = fall_speed
 			
 		#Sprites for jumping and running
-		if move.y > 0: $AnimatedSprite.play("jump")
+		if move.y < 0: $AnimatedSprite.play("jump")
 		if move.x !=0: $AnimatedSprite.play("run")
 		else: $AnimatedSprite.play("idle")
 		
 		return move
+
+
+func damage(amount):
+	#if invulnerability_timer.is_stopped():
+	#	invulnerability_timer.start()
+	_set_health(health - amount)
+	print("damaged")
+	
+func kill():
+	print("dead")
+	
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	if health != prev_health:
+		emit_signal("health_updated", health)
+		if health == 0:
+			kill()
+			emit_signal("killed")

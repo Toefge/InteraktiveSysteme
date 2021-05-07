@@ -47,7 +47,7 @@ func calculate_move_velocity(
 			move.y = fall_speed
 			
 		#Sprites for jumping and running
-		if move.y > 0: $Sprite.play("jump")
+		if move.y < 0: $Sprite.play("jump")
 		if move.x !=0: $Sprite.play("run")
 		else: $Sprite.play("idle")
 		
