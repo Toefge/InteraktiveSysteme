@@ -9,9 +9,13 @@ func _ready():
 	
 func _physics_process(delta):
 	position.x = lerp(position.x, get_parent().position.x, 0.5)
-	position.y = lerp(position.y, get_parent().position.y+10, 0.5)
-	var mouse_pos = get_global_mouse_position()
-	look_at(mouse_pos)
+	position.y = lerp(position.y, get_parent().position.y+5, 0.5)
+	if Input.is_action_just_pressed("left"):
+		look_at(Vector2(position.x * -1 , position.y))
+	if Input.is_action_just_pressed("right"):
+		look_at(Vector2(100000,position.y))
+	#var mouse_pos = get_global_mouse_position()
+	#look_at(mouse_pos)
 	
 	if Input.is_action_pressed("fire") and can_fire:
 		var bullet_instance = bullet.instance()
