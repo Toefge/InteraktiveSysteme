@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal health_updated(health)
+signal killed()
+
 var move = Vector2()
 export var speed: = Vector2(300.0, 1000.0)
 export var gravity: = 3000.0
@@ -26,14 +29,12 @@ func _physics_process(delta):
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
-
 	#Changing Sprites for left and right
 	if Input.is_action_just_pressed("left"):
 		$Sprite.flip_h = true
 	elif Input.is_action_just_pressed("right"):
 		$Sprite.flip_h = false
 
-	
 #Check which keys the player is pressing to move
 func get_direction() -> Vector2:
 	return Vector2(
