@@ -7,11 +7,7 @@
 [ext_resource path="res://assets/sPlayer_a_strip2.png" type="Texture" id=5]
 [ext_resource path="res://assets/sPlayer2.png" type="Texture" id=6]
 [ext_resource path="res://assets/sGun.png" type="Texture" id=7]
-<<<<<<< Updated upstream
 [ext_resource path="res://Player2/GunPlayer2.gd" type="Script" id=8]
-=======
-[ext_resource path="res://Player2/Sprite(gun).gd" type="Script" id=8]
->>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.6332, 16.8791 )
@@ -121,7 +117,6 @@ script = ExtResource( 1 )
 position = Vector2( 0.707214, -2.82844 )
 shape = SubResource( 10 )
 
-<<<<<<< Updated upstream
 [node name="LeftWall" type="RayCast2D" parent="."]
 position = Vector2( 13.667, 0 )
 rotation = 1.5708
@@ -133,12 +128,3 @@ position = Vector2( 13.667, 0 )
 rotation = -1.5708
 scale = Vector2( -0.865, 0.266 )
 enabled = true
-=======
-[node name="Sprite(gun)" type="Sprite" parent="."]
-position = Vector2( 11.0684, 5.03966 )
-texture = ExtResource( 7 )
-script = ExtResource( 8 )
-
-[node name="muzzle" type="Position2D" parent="Sprite(gun)"]
-position = Vector2( 14.6009, -0.188398 )
->>>>>>> Stashed changes
