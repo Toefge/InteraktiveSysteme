@@ -17,7 +17,7 @@ const FLOOR_NORMAL: = Vector2.UP
 #Hp
 export (float) var max_health = 100;
 onready var health = max_health setget _set_health
-onready var invulnerability_timer = $InvulnerabilityTimer
+#onready var invulnerability_timer = $InvulnerabilityTimer
 onready var Hitbox = $Hitbox
 	
 	
@@ -39,7 +39,7 @@ func _physics_process(delta):
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"), 
-		-1.0 if Input.is_action_just_pressed("up") and is_on_floor() else 0.0
+		-1.0 if Input.is_action_pressed("up") and is_on_floor() else 0.0
 	)
 	
 func calculate_move_velocity(

@@ -5,6 +5,7 @@ var bullet = preload("res://bullet.tscn")
 
 func _ready():
 	set_as_toplevel(true)
+	look_at(Vector2( -1, 1))
 	
 func _physics_process(delta):
 	position.x = lerp(position.x, get_parent().position.x, 0.5)

@@ -97,13 +97,13 @@ animation = "run"
 frame = 3
 
 [node name="Gun" type="Sprite" parent="."]
-position = Vector2( 10, 0 )
+position = Vector2( 9.99998, 0.794594 )
 texture = ExtResource( 7 )
 offset = Vector2( 4.253, 0 )
 script = ExtResource( 8 )
 
 [node name="muzzle" type="Position2D" parent="Gun"]
-position = Vector2( 12.3354, 0.0188961 )
+position = Vector2( 12.3354, 0.283766 )
 
 [node name="InvulnerabilityTimer" type="Timer" parent="."]
 wait_time = 0.863
