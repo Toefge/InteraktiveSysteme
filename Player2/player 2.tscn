@@ -89,6 +89,8 @@ shape = SubResource( 1 )
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0.462745, 0.337255, 0.337255, 1 )
+self_modulate = Color( 0.576471, 0.419608, 0.419608, 1 )
 position = Vector2( 0.345892, -8.68014 )
 frames = SubResource( 8 )
 animation = "run"
