@@ -80,7 +80,6 @@ radius = 8.92834
 height = 16.4005
 
 [node name="player 2" type="KinematicBody2D"]
-position = Vector2( 900, 0 )
 script = ExtResource( 2 )
 max_health = 20.0
 
@@ -90,16 +89,19 @@ shape = SubResource( 1 )
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.512747, -7.17844 )
+position = Vector2( 0.345892, -8.68014 )
 frames = SubResource( 8 )
 animation = "run"
 frame = 3
 
 [node name="Gun" type="Sprite" parent="."]
+position = Vector2( 10, 0 )
 texture = ExtResource( 7 )
+offset = Vector2( 4.253, 0 )
 script = ExtResource( 8 )
 
 [node name="muzzle" type="Position2D" parent="Gun"]
+position = Vector2( 12.3354, 0.0188961 )
 
 [node name="InvulnerabilityTimer" type="Timer" parent="."]
 wait_time = 0.863

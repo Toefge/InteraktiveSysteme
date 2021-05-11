@@ -79,7 +79,8 @@ animation = "idle"
 frame = 1
 
 [node name="Gun" type="Sprite" parent="."]
-position = Vector2( 5.12263, 3.27391 )
+position = Vector2( 6, 3.274 )
+scale = Vector2( 1.02835, 1 )
 texture = ExtResource( 7 )
 offset = Vector2( 4.253, 0 )
 script = ExtResource( 1 )

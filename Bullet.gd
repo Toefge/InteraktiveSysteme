@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = 1500
+export var speed = 500
 
 
 func _ready():
@@ -17,7 +17,6 @@ func _physics_process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
-
 
 func _on_bullet_body_entered(body):
 	queue_free()

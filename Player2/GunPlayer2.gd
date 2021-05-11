@@ -1,6 +1,5 @@
 extends Sprite
 
-
 var can_fire = true
 var bullet = preload("res://bullet.tscn")
 
