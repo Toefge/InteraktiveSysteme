@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 468.0
+margin_top = 35.0
+margin_right = 568.0
+margin_bottom = 54.0
+text = "Friendly Fire 2"
+align = 1
+valign = 1
+
+[node name="ButtonStart" type="Button" parent="."]
+margin_left = 434.0
+margin_top = 151.2
+margin_right = 616.0
+margin_bottom = 171.2
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOption" type="Button" parent="."]
+margin_left = 435.24
+margin_top = 204.541
+margin_right = 616.24
+margin_bottom = 224.541
+text = "Option"
+
+[node name="ButtonExit" type="Button" parent="."]
+margin_left = 434.0
+margin_top = 255.92
+margin_right = 616.0
+margin_bottom = 275.92
+text = "Exit"
+
+[connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
+[connection signal="pressed" from="ButtonExit" to="." method="_on_ButtonExit_pressed"]
