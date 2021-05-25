@@ -19,6 +19,9 @@ export (float) var max_health = 100;
 onready var health = max_health setget _set_health
 #onready var invulnerability_timer = $InvulnerabilityTimer
 onready var Hitbox = $Hitbox
+
+#HealthBar
+var healthBar = preload("res://HealthBar/HealthBarScript.gd")
 	
 	
 func _physics_process(delta):
@@ -99,6 +102,7 @@ func _set_health(value):
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
 		emit_signal("health_updated", health)
+		$HealthBar._on_health_updated()
 		if health == 0:
 			kill()
 			emit_signal("killed")

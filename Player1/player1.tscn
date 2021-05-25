@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Gun.gd" type="Script" id=1]
 [ext_resource path="res://Player1/player1.gd" type="Script" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://assets/sPlayer_a_strip2.png" type="Texture" id=5]
 [ext_resource path="res://assets/sPlayer2.png" type="Texture" id=6]
 [ext_resource path="res://assets/sGun.png" type="Texture" id=7]
-[ext_resource path="res://HitBoxScript.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/HitBoxScript.gd" type="Script" id=8]
+[ext_resource path="res://HealthBar/Hp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://HealthBar/HealthBarScript.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.02926, 15.5354 )
@@ -75,6 +77,7 @@ shape = SubResource( 1 )
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0.941176, 0.309804, 0.309804, 1 )
 position = Vector2( 0.629982, -8.2301 )
 frames = SubResource( 8 )
 animation = "idle"
@@ -107,3 +110,11 @@ cast_to = Vector2( 0, 15 )
 rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 15 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 9 )]
+margin_left = -40.1228
+margin_top = -53.9617
+margin_right = -40.1228
+margin_bottom = -53.9617
+rect_scale = Vector2( 0.0307513, 0.0282296 )
+script = ExtResource( 10 )

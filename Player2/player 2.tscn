@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://HitBoxScript.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/HitBoxScript.gd" type="Script" id=1]
 [ext_resource path="res://Player2/player 2.gd" type="Script" id=2]
 [ext_resource path="res://assets/sPlayer.png" type="Texture" id=3]
 [ext_resource path="res://assets/sPlayer_r_strip4.png" type="Texture" id=4]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/sPlayer2.png" type="Texture" id=6]
 [ext_resource path="res://assets/sGun.png" type="Texture" id=7]
 [ext_resource path="res://Player2/GunPlayer2.gd" type="Script" id=8]
+[ext_resource path="res://HealthBar/Hp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://HealthBar/HealthBarScript.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.2877, 15.633 )
@@ -134,3 +136,11 @@ position = Vector2( 13.667, 0 )
 rotation = -1.5708
 scale = Vector2( -0.865, 0.266 )
 enabled = true
+
+[node name="HealthBar" parent="." instance=ExtResource( 9 )]
+margin_left = -37.7549
+margin_top = -53.8009
+margin_right = -37.7549
+margin_bottom = -53.8009
+rect_scale = Vector2( 0.0278006, 0.0296184 )
+script = ExtResource( 10 )

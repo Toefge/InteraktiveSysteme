@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
-"path": "res://HitBoxScript.gd"
+"path": "res://Scripts/HitBoxScript.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",

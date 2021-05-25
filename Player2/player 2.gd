@@ -99,6 +99,7 @@ func _set_health(value):
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
 		emit_signal("health_updated", health)
+		$HealthBar._on_health_updated()
 		if health == 0:
 			kill()
 			emit_signal("killed")
