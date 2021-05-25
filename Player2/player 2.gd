@@ -93,6 +93,8 @@ func damage(amount):
 	
 func kill():
 	print("dead")
+	yield(get_tree().create_timer(2), "timeout")
+	get_tree().change_scene("res://Menu.tscn")
 	
 func _set_health(value):
 	var prev_health = health
