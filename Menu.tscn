@@ -48,6 +48,9 @@ margin_right = 1024.0
 margin_bottom = 608.0
 texture = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="."]
 margin_left = 311.567
@@ -65,10 +68,10 @@ __meta__ = {
 }
 
 [node name="ButtonStart" type="Button" parent="."]
-margin_left = 432.522
-margin_top = 177.722
-margin_right = 614.522
-margin_bottom = 197.722
+margin_left = 406.341
+margin_top = 329.323
+margin_right = 673.341
+margin_bottom = 364.323
 custom_fonts/font = SubResource( 4 )
 text = "Start"
 __meta__ = {
@@ -76,18 +79,18 @@ __meta__ = {
 }
 
 [node name="ButtonOption" type="Button" parent="."]
-margin_left = 434.0
-margin_top = 227.0
-margin_right = 615.0
-margin_bottom = 250.0
+margin_left = 406.341
+margin_top = 380.146
+margin_right = 673.341
+margin_bottom = 418.146
 custom_fonts/font = SubResource( 6 )
 text = "Option"
 
 [node name="ButtonExit" type="Button" parent="."]
-margin_left = 434.0
-margin_top = 277.969
-margin_right = 616.0
-margin_bottom = 297.969
+margin_left = 409.988
+margin_top = 487.664
+margin_right = 677.988
+margin_bottom = 526.664
 custom_fonts/font = SubResource( 8 )
 text = "Exit"
 

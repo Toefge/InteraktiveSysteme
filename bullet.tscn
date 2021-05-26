@@ -4,7 +4,6 @@
 [ext_resource path="res://Scripts/Bullet.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/DamageArea.gd" type="Script" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.2253, 5.3206 )
 
@@ -15,6 +14,7 @@ extents = Vector2( 10.0715, 5.5445 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 1 )
 hframes = 2
 
@@ -34,6 +34,7 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
 position = Vector2( 3.34087, 0 )
 shape = SubResource( 2 )
+
 [connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="area_entered" from="DamageArea" to="DamageArea" method="_on_DamageArea_area_entered"]
