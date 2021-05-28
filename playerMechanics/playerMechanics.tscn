@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Gun.gd" type="Script" id=1]
-[ext_resource path="res://Player1/player1.gd" type="Script" id=2]
+[ext_resource path="res://playerMechanics/GunScript.gd" type="Script" id=1]
+[ext_resource path="res://playerMechanics/playerScript.gd" type="Script" id=2]
 [ext_resource path="res://assets/sPlayer.png" type="Texture" id=3]
 [ext_resource path="res://assets/sPlayer_r_strip4.png" type="Texture" id=4]
 [ext_resource path="res://assets/sPlayer_a_strip2.png" type="Texture" id=5]
 [ext_resource path="res://assets/sPlayer2.png" type="Texture" id=6]
 [ext_resource path="res://assets/sGun.png" type="Texture" id=7]
-[ext_resource path="res://Scripts/HitBoxScript.gd" type="Script" id=8]
+[ext_resource path="res://playerMechanics/HitBoxScript.gd" type="Script" id=8]
 [ext_resource path="res://HealthBar/Hp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://HealthBar/HealthBarScript.gd" type="Script" id=10]
 
@@ -16,33 +16,33 @@ extents = Vector2( 8.02926, 15.5354 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 4 )
 region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 48, 48 )
+region = Rect2( 96, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 48, 0, 48, 48 )
+region = Rect2( 144, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 48, 48 )
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 144, 0, 48, 48 )
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -51,32 +51,32 @@ animations = [ {
 "name": "idle",
 "speed": 4.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
-"loop": true,
-"name": "jump",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 14.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 1.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 8.00539, 10 )
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 7.49603
+height = 26.263
 
 [node name="player" type="KinematicBody2D"]
 modulate = Color( 0.709804, 0.0470588, 0.0470588, 1 )
 self_modulate = Color( 0.92549, 0.780392, 0.780392, 1 )
 script = ExtResource( 2 )
-max_health = 20.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PhysikBody" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.941176, 0.309804, 0.309804, 1 )
 position = Vector2( 0.629982, -8.2301 )
 frames = SubResource( 8 )
@@ -98,7 +98,8 @@ collision_layer = 32
 collision_mask = 0
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -0.221718, -5.42601 )
 shape = SubResource( 9 )
 
 [node name="LeftWall" type="RayCast2D" parent="."]

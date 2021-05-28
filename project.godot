@@ -12,23 +12,16 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
-"path": "res://Scripts/HitBoxScript.gd"
-}, {
-"base": "Node",
-"class": "StateMachine",
-"language": "GDScript",
-"path": "res://TestStuff/StateMachine.gd"
+"path": "res://playerMechanics/HitBoxScript.gd"
 } ]
 _global_script_class_icons={
-"Hitbox": "",
-"StateMachine": ""
+"Hitbox": ""
 }
 
 [application]
 
 config/name="shooter"
-run/main_scene="res://Menu.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Menu/Menu.tscn"
 
 [display]
 
