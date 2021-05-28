@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://playerMechanics/GunScript.gd" type="Script" id=1]
 [ext_resource path="res://playerMechanics/playerScript.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://playerMechanics/HitBoxScript.gd" type="Script" id=8]
 [ext_resource path="res://HealthBar/Hp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://HealthBar/HealthBarScript.gd" type="Script" id=10]
+[ext_resource path="res://assets/sPlayer_death_left.png" type="Texture" id=11]
+[ext_resource path="res://assets/sPlayer_death_right.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.02926, 15.5354 )
@@ -119,3 +121,11 @@ margin_right = -40.1228
 margin_bottom = -53.9617
 rect_scale = Vector2( 0.0307513, 0.0282296 )
 script = ExtResource( 10 )
+
+[node name="DeadPlayerLeft" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 11 )
+
+[node name="DeadPlayerRight" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 12 )

@@ -26,6 +26,8 @@ onready var health = max_health setget _set_health
 #onready var invulnerability_timer = $InvulnerabilityTimer
 onready var Hitbox = $Hitbox
 
+var dead = false
+
 #HealthBar
 var healthBar = preload("res://HealthBar/HealthBarScript.gd")
 	
@@ -40,17 +42,18 @@ func _ready():
 
 func _physics_process(delta):
 	
-	#Check if the player let go of the jump button
-	var is_jump_interrupted: = Input.is_action_just_released(up) and _velocity.y < 0.0
-	var direction: = get_direction()
-	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
-	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-	
-	#Changing Sprites for left and right
-	if Input.is_action_just_pressed(left):
-		$AnimatedSprite.flip_h = true
-	elif Input.is_action_just_pressed(right):
-		$AnimatedSprite.flip_h = false
+	if (!dead):
+		#Check if the player let go of the jump button
+		var is_jump_interrupted: = Input.is_action_just_released(up) and _velocity.y < 0.0
+		var direction: = get_direction()
+		_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+		
+		#Changing Sprites for left and right
+		if Input.is_action_just_pressed(left):
+			$AnimatedSprite.flip_h = true
+		elif Input.is_action_just_pressed(right):
+			$AnimatedSprite.flip_h = false
 
 #Check which keys the player is pressing to move
 func get_direction() -> Vector2:
@@ -107,8 +110,15 @@ func damage(amount):
 	print("damaged")
 	
 func kill():
+	dead = true
 	print("dead")
-	yield(get_tree().create_timer(2), "timeout")
+	$AnimatedSprite.hide()
+	$Gun.hide()
+	if ($AnimatedSprite.flip_h):
+		$DeadPlayerLeft.show()
+	else:
+		$DeadPlayerRight.show()
+	yield(get_tree().create_timer(3), "timeout")
 	get_tree().change_scene("res://Menu/Menu.tscn")
 	
 func _set_health(value):

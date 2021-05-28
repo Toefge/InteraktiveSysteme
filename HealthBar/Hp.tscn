@@ -14,7 +14,7 @@ __meta__ = {
 [node name="TweenBar" type="TextureProgress" parent="."]
 margin_right = 2686.0
 margin_bottom = 809.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 1 )
 tint_progress = Color( 0.94902, 0.545098, 0.0313726, 1 )
@@ -25,7 +25,7 @@ __meta__ = {
 [node name="HealthBar" type="TextureProgress" parent="."]
 margin_right = 2686.0
 margin_bottom = 809.0
-value = 50.0
+value = 100.0
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 1 )
 tint_progress = Color( 0.905882, 0.054902, 0.054902, 1 )
