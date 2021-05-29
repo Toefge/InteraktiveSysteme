@@ -7,7 +7,7 @@
 font_path = "res://assets/MinecraftTitle.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 44
+size = 54
 outline_size = 6
 outline_color = Color( 0.054902, 0.0470588, 0.0470588, 1 )
 extra_spacing_char = 3
@@ -25,7 +25,7 @@ font_data = SubResource( 3 )
 font_path = "res://assets/MinecraftTitle.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-size = 17
+size = 19
 font_data = SubResource( 5 )
 
 [sub_resource type="DynamicFontData" id=7]
@@ -44,8 +44,8 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 608.0
+margin_right = 1280.0
+margin_bottom = 720.0
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -53,25 +53,30 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 311.567
-margin_top = 65.603
-margin_right = 747.567
-margin_bottom = 98.603
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -263.0
+margin_top = 70.0
+margin_right = 263.0
+margin_bottom = 41.0
 custom_fonts/font = SubResource( 2 )
 custom_constants/shadow_offset_x = 8
 custom_constants/line_spacing = -8
 text = "Friendly Fire 2"
 align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonStart" type="Button" parent="."]
-margin_left = 406.341
-margin_top = 329.323
-margin_right = 673.341
-margin_bottom = 364.323
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -133.5
+margin_top = -60.0
+margin_right = 133.5
+margin_bottom = -25.0
 custom_fonts/font = SubResource( 4 )
 text = "Start"
 __meta__ = {
@@ -79,19 +84,27 @@ __meta__ = {
 }
 
 [node name="ButtonOption" type="Button" parent="."]
-margin_left = 406.341
-margin_top = 380.146
-margin_right = 673.341
-margin_bottom = 418.146
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -133.5
+margin_right = 133.5
+margin_bottom = 38.0
 custom_fonts/font = SubResource( 6 )
 text = "Option"
 
 [node name="ButtonExit" type="Button" parent="."]
-margin_left = 409.988
-margin_top = 487.664
-margin_right = 677.988
-margin_bottom = 526.664
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.0
+margin_top = 60.0
+margin_right = 134.0
+margin_bottom = 99.0
 custom_fonts/font = SubResource( 8 )
 text = "Exit"
+
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="pressed" from="ButtonExit" to="." method="_on_ButtonExit_pressed"]
