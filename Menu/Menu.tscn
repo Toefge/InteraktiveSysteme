@@ -93,6 +93,5 @@ margin_right = 677.988
 margin_bottom = 526.664
 custom_fonts/font = SubResource( 8 )
 text = "Exit"
-
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="pressed" from="ButtonExit" to="." method="_on_ButtonExit_pressed"]

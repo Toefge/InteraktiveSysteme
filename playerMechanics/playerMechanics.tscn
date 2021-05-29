@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://playerMechanics/GunScript.gd" type="Script" id=1]
 [ext_resource path="res://playerMechanics/playerScript.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://HealthBar/HealthBarScript.gd" type="Script" id=10]
 [ext_resource path="res://assets/sPlayer_death_left.png" type="Texture" id=11]
 [ext_resource path="res://assets/sPlayer_death_right.png" type="Texture" id=12]
+[ext_resource path="res://Ammo/Ammo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Ammo/AmmoScript.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.02926, 15.5354 )
@@ -69,7 +71,6 @@ radius = 7.49603
 height = 26.263
 
 [node name="player" type="KinematicBody2D"]
-modulate = Color( 0.709804, 0.0470588, 0.0470588, 1 )
 self_modulate = Color( 0.92549, 0.780392, 0.780392, 1 )
 script = ExtResource( 2 )
 
@@ -129,3 +130,11 @@ texture = ExtResource( 11 )
 [node name="DeadPlayerRight" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 12 )
+
+[node name="Ammo" parent="." instance=ExtResource( 13 )]
+margin_left = -53.87
+margin_top = -85.1861
+margin_right = -53.4941
+margin_bottom = -85.1861
+rect_scale = Vector2( 0.0415326, 0.0479937 )
+script = ExtResource( 14 )

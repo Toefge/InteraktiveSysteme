@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Ammo/Ammo03.png" type="Texture" id=1]
+
+[node name="Ammo" type="Control"]
+anchor_right = 0.651
+anchor_bottom = 0.567
+margin_right = 0.375977
+margin_bottom = -0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoBar" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+max_value = 6.0
+value = 4.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 0.176471, 0.172549, 0.172549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoTween" type="Tween" parent="."]
