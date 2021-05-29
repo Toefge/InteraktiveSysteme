@@ -75,7 +75,10 @@ func calculate_move_velocity(
 		if is_jump_interrupted:
 			move.y = fall_speed
 			
-		if Input.is_action_just_pressed(up) and not is_on_floor() and nextToWall():
+		if (Input.is_action_just_pressed(up) 
+		and not is_on_floor() 
+		and nextToWall() 
+		and position.y > get_node("/root/game/MaxWalljumpHeight").position.y):
 			if not is_on_floor() and nextToRightWall():
 				move.x = direction.x * speed.x - wallJumpPush
 				move.y = speed.y * direction.y - wallJumpHeight
@@ -111,15 +114,30 @@ func damage(amount):
 	
 func kill():
 	dead = true
-	print("dead")
 	$AnimatedSprite.hide()
 	$Gun.hide()
 	if ($AnimatedSprite.flip_h):
-		$DeadPlayerLeft.show()
+		$DeadPlayer.flip_h = true
+		$DeadPlayer.show()
+		$DeadPlayer.play("death")
 	else:
-		$DeadPlayerRight.show()
-	yield(get_tree().create_timer(3), "timeout")
-	get_tree().change_scene("res://Menu/Menu.tscn")
+		$DeadPlayer.show()
+		$DeadPlayer.play("death")
+		
+	yield(get_tree().create_timer(1), "timeout")
+	respawn()
+	
+func respawn():
+	dead = false
+	health = max_health
+	if(self.name == "player1"):
+		self.position = get_node("/root/game/SpawnPosition1").position
+	else:
+		self.position = get_node("/root/game/SpawnPosition2").position
+	$DeadPlayer.hide()
+	$HealthBar._on_health_updated()
+	$AnimatedSprite.show()
+	$Gun.show()
 	
 func _set_health(value):
 	var prev_health = health
