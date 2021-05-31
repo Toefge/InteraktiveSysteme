@@ -132,7 +132,6 @@ focus_neighbour_top = NodePath("../ButtonOption")
 focus_neighbour_bottom = NodePath("../ButtonStart")
 custom_fonts/font = SubResource( 8 )
 text = "Exit"
-
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="pressed" from="ButtonOption" to="." method="_on_ButtonOption_pressed"]
 [connection signal="pressed" from="ButtonDemo" to="." method="_on_ButtonDemo_pressed"]

@@ -23,10 +23,11 @@ func Reload():
 	
 func _assign_color(bullets):
 	if bullets.value <= 0:
-		ammotween.interpolate_property(bullets, "tint_under", first_color, pulse_color, 1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)	
+		ammotween.interpolate_property(bullets, "tint_under", first_color, pulse_color, 0.9, Tween.TRANS_SINE, Tween.EASE_IN_OUT)	
 		ammotween.start()
 	if bullets.value > 0:
 		ammotween.interpolate_property(bullets, "tint_progress", white_color, white_color, 1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)	
+		ammotween.interpolate_property(bullets, "tint_under", first_color, first_color, 1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)	
 		ammotween.start()
 	
 	
