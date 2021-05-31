@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://CollectableItems/SpawnItems.gd" type="Script" id=1]
+[ext_resource path="res://CollectableItems/BoxItem.tscn" type="PackedScene" id=2]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+Box = ExtResource( 2 )
+
+[node name="BoxSpawnPosition1" type="Position2D" parent="."]
+position = Vector2( 640, 192 )
+
+[node name="BoxSpawnPosition2" type="Position2D" parent="."]
+position = Vector2( 304, 96 )
+
+[node name="BoxSpawnPosition3" type="Position2D" parent="."]
+position = Vector2( 992, 96 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 4.5
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

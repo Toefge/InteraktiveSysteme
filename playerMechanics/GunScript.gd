@@ -61,3 +61,6 @@ func flipGun(flip):
 		#dann muss der Wert ggf angepasst werden!
 		look_at(Vector2( 0, 3))
 		
+
+func _on_player_reload():
+	_reload()

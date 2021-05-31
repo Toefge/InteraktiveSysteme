@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal health_updated(health)
 signal killed()
+signal reload()
 
 var move = Vector2()
 export var speed: = Vector2(300.0, 1000.0)

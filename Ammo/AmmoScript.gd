@@ -3,8 +3,6 @@ extends Node
 onready var bullets = $AmmoBar
 onready var ammotween = $AmmoTween
 
-
-
 export (Color) var first_color = Color.darkgray
 export (Color) var pulse_color = Color.red
 export (Color) var white_color = Color.white
@@ -35,6 +33,5 @@ func _assign_color(bullets):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_assignAmmo()
-	
 
 
