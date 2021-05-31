@@ -77,6 +77,8 @@ margin_left = -133.0
 margin_top = -104.0
 margin_right = 134.0
 margin_bottom = -69.0
+focus_neighbour_top = NodePath("../ButtonExit")
+focus_neighbour_bottom = NodePath("../ButtonDemo")
 custom_fonts/font = SubResource( 4 )
 text = "Start"
 __meta__ = {
@@ -92,6 +94,8 @@ margin_left = -133.5
 margin_top = 24.0
 margin_right = 133.5
 margin_bottom = 62.0
+focus_neighbour_top = NodePath("../ButtonDemo")
+focus_neighbour_bottom = NodePath("../ButtonExit")
 custom_fonts/font = SubResource( 6 )
 text = "Option"
 __meta__ = {
@@ -107,6 +111,8 @@ margin_left = -133.0
 margin_top = -40.0
 margin_right = 134.0
 margin_bottom = -2.0
+focus_neighbour_top = NodePath("../ButtonStart")
+focus_neighbour_bottom = NodePath("../ButtonOption")
 custom_fonts/font = SubResource( 6 )
 text = "Demo"
 __meta__ = {
@@ -122,9 +128,12 @@ margin_left = -133.5
 margin_top = 88.0
 margin_right = 134.5
 margin_bottom = 127.0
+focus_neighbour_top = NodePath("../ButtonOption")
+focus_neighbour_bottom = NodePath("../ButtonStart")
 custom_fonts/font = SubResource( 8 )
 text = "Exit"
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
+[connection signal="pressed" from="ButtonOption" to="." method="_on_ButtonOption_pressed"]
 [connection signal="pressed" from="ButtonDemo" to="." method="_on_ButtonDemo_pressed"]
 [connection signal="pressed" from="ButtonExit" to="." method="_on_ButtonExit_pressed"]
