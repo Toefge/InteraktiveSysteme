@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/wall.png" type="Texture" id=1]
 [ext_resource path="res://playerMechanics/playerMechanics.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/cavesofgallet.png" type="Texture" id=5]
 [ext_resource path="res://assets/backgroundMountainsDay.PNG" type="Texture" id=6]
 [ext_resource path="res://Demo/DemoPlayer.gd" type="Script" id=7]
+[ext_resource path="res://CollectableItems/SpawnItems.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -645,6 +646,8 @@ autostart = true
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 1.5
 autostart = true
+
+[node name="Node" parent="." instance=ExtResource( 8 )]
 
 [connection signal="killed" from="player1" to="HUD" method="_on_player1_killed"]
 [connection signal="killed" from="player2" to="HUD" method="_on_player2_killed"]
