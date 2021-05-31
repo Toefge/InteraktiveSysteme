@@ -30,6 +30,7 @@ var healthBar = preload("res://HealthBar/HealthBarScript.gd")
 	
 func _ready():
 	$AnimatedSprite.flip_h = true
+	$Gun.demo = true
 	$Gun.flipGun(true)
 	$Gun.bulletColor = Color.blue
 	
@@ -152,9 +153,5 @@ func _on_DemoPlayerJump():
 	moveDirection.y = 0.0
 
 func _on_ShootTimer_timeout():
-	print("test")
-	var a = InputEventAction.new()
-	a.action = "fire02"
-	a.pressed = true
-	Input.parse_input_event(a)
+	get_node("Gun").emit_signal("demoShoot")
 

@@ -149,3 +149,4 @@ rect_scale = Vector2( 0.0415326, 0.0479937 )
 script = ExtResource( 14 )
 
 [connection signal="reload" from="." to="Gun" method="_on_player_reload"]
+[connection signal="demoShoot" from="Gun" to="Gun" method="_on_Gun_demoShoot"]
