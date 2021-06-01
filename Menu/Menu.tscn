@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/backgroundMountainsDay.PNG" type="Texture" id=2]
+[ext_resource path="res://assets/Path to Lake Land.ogg" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/MinecraftTitle.ttf"
@@ -132,6 +133,11 @@ focus_neighbour_top = NodePath("../ButtonOption")
 focus_neighbour_bottom = NodePath("../ButtonStart")
 custom_fonts/font = SubResource( 8 )
 text = "Exit"
+
+[node name="Backgroundsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="pressed" from="ButtonOption" to="." method="_on_ButtonOption_pressed"]
 [connection signal="pressed" from="ButtonDemo" to="." method="_on_ButtonDemo_pressed"]
