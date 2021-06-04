@@ -4,9 +4,9 @@ signal health_updated(health)
 signal killed()
 
 var move = Vector2()
-export var speed: = Vector2(300.0, 100.0)
-export var gravity: = 3000.0
-export var fall_speed = 1.0
+export var speed: = Vector2(10.0, 10.0)
+export var gravity: = 1000.0
+export var fall_speed = 0.5
 var _velocity: = Vector2.ZERO
 
 export var wallJumpPush = 2000
@@ -24,6 +24,7 @@ onready var health = max_health setget _set_health
 onready var Hitbox = $Hitbox
 
 var dead = false
+var jumping = false
 
 #HealthBar
 var healthBar = preload("res://HealthBar/HealthBarScript.gd")
@@ -39,8 +40,17 @@ func _physics_process(delta):
 	
 	if (!dead):
 		
-		if(nextToWall()):
+		if(position.x >= get_node("/root/game/ChangeDirectionRight").position.x or
+		 position.x <= get_node("/root/game/ChangeDirectionLeft").position.x):
+			_on_DemoPlayerChangeDirection()
+			if(randi() % 2):
+				_on_DemoPlayerJump()
+		
+		if(nextToWall() and !jumping):
 			_on_DemoPlayerJump()
+			
+		if(jumping and !nextToWall()):
+			jumping = !jumping
 		
 		_velocity = calculate_move_velocity(_velocity, moveDirection, speed)
 		_velocity = move_and_slide(_velocity)
@@ -138,20 +148,28 @@ func _set_health(value):
 			emit_signal("killed")
 
 
-func _on_DemoPlayerChangeDirection_timeout():
+func _on_DemoPlayerChangeDirection():
 
 	directionLeft = !directionLeft
 	if(directionLeft):
-		moveDirection.x = -0.6
+		moveDirection.x = -0.4
 	else:
-		moveDirection.x = 0.6
+		moveDirection.x = 0.4
 	
 
 func _on_DemoPlayerJump():
-	moveDirection.y = -1.0
-	yield(get_tree().create_timer(0.07), "timeout")
-	moveDirection.y = 0.0
-
+	if(!jumping):
+		jumping = !jumping
+		moveDirection.y = -1.0
+		yield(get_tree().create_timer(0.07), "timeout")
+		moveDirection.y = 0.0
+			
 func _on_ShootTimer_timeout():
 	get_node("Gun").emit_signal("demoShoot")
 
+
+
+func _on_JumpTimer_timeout():
+	if(randi() % 2):
+		_on_DemoPlayerJump()
+		

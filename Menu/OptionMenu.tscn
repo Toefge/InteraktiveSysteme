@@ -143,10 +143,10 @@ __meta__ = {
 }
 
 [node name="Musicvolume" type="HSlider" parent="Audio/music"]
-margin_left = 186.626
-margin_top = -6.11681
-margin_right = 280.626
-margin_bottom = 17.8832
+margin_left = 187.0
+margin_top = -4.0
+margin_right = 281.0
+margin_bottom = 20.0
 min_value = -20.0
 max_value = 15.0
 script = ExtResource( 4 )

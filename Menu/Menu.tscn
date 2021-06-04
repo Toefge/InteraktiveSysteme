@@ -139,6 +139,7 @@ __meta__ = {
 
 [node name="Backgroundsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+volume_db = -15.241
 autoplay = true
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
