@@ -20,6 +20,7 @@ export var right = "right"
 export var up = "up"
 export var shoot = "fire"
 export var orientationLeft = false
+export var color = Color('#f04f4f')
 
 #Hp
 export (float) var max_health = 100;
@@ -38,7 +39,10 @@ func _ready():
 	$Gun.shoot = shoot
 	$Gun.left = left
 	$Gun.right = right
-	$Gun.bulletColor = Color.blue
+	$Gun.bulletColor = color
+	$AnimatedSprite.modulate = color
+	$DeadPlayer.modulate = color
+	
 	
 
 func _physics_process(delta):

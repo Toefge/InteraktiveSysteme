@@ -42,6 +42,7 @@ func _physics_process(delta):
 	
 		if Input.is_action_pressed(shoot) and can_fire:
 			var bullet_instance = bullet.instance()
+			bullet_instance.modulate = bulletColor
 			bullet_instance.rotation = rotation
 			bullet_instance.global_position = $muzzle.global_position
 			get_parent().add_child(bullet_instance)
