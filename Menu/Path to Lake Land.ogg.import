@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Path to Lake Land.ogg-2b3933e9b4612e2bd277323fd265f416.oggstr"
+
+[deps]
+
+source_file="res://Menu/Path to Lake Land.ogg"
+dest_files=[ "res://.import/Path to Lake Land.ogg-2b3933e9b4612e2bd277323fd265f416.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
