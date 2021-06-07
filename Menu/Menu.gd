@@ -25,3 +25,23 @@ func _on_ButtonOption_pressed():
 func CloseOptionMenu():
 	get_node("OptionMenu").queue_free()
 
+
+
+func _on_ButtonStart_mouse_entered():
+	$Buttonsound.play()
+	pass # Replace with function body.
+
+
+func _on_ButtonOption_mouse_entered():
+	$Buttonsound.play()
+	pass # Replace with function body.
+
+
+func _on_ButtonDemo_mouse_entered():
+	$Buttonsound.play()
+	pass # Replace with function body.
+
+
+func _on_ButtonExit_mouse_entered():
+	$Buttonsound.play()
+	pass # Replace with function body.

@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://OptionMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/back.PNG" type="Texture" id=2]
+[ext_resource path="res://Sound/29301__junggle__btn121.wav" type="AudioStream" id=3]
 [ext_resource path="res://Menu/Musicvolume.gd" type="Script" id=4]
+[ext_resource path="res://assets/WASDkey.png" type="Texture" id=5]
+[ext_resource path="res://assets/Arrowkey.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/MinecraftTitle.ttf"
@@ -26,27 +29,36 @@ font_data = SubResource( 3 )
 font_path = "res://assets/MinecraftTitle.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-size = 21
-outline_color = Color( 0, 0, 0, 1 )
+size = 13
+outline_size = 1
+outline_color = Color( 0.0588235, 0.054902, 0.054902, 1 )
 font_data = SubResource( 5 )
 
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://assets/MinecraftTitle.ttf"
 
 [sub_resource type="DynamicFont" id=8]
-size = 44
-outline_size = 4
-outline_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+size = 21
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 7 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://assets/MinecraftTitle.ttf"
 
 [sub_resource type="DynamicFont" id=10]
+size = 44
+outline_size = 4
+outline_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://assets/MinecraftTitle.ttf"
+
+[sub_resource type="DynamicFont" id=12]
 size = 14
 outline_size = 2
 outline_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
-font_data = SubResource( 9 )
+font_data = SubResource( 11 )
 
 [node name="OptionMenu" type="Control"]
 margin_right = 40.0
@@ -69,16 +81,17 @@ __meta__ = {
 }
 
 [node name="VBoxPlayer 1" type="VBoxContainer" parent="Background"]
-margin_left = 5.0
+margin_left = 3.32437
 margin_top = 19.0
-margin_right = 115.0
+margin_right = 113.324
 margin_bottom = 199.0
+rect_scale = Vector2( 0.945308, 0.86811 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Player 1" type="Label" parent="Background/VBoxPlayer 1"]
-margin_right = 110.0
+margin_right = 109.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 2 )
 text = "PLayer 1"
@@ -98,12 +111,166 @@ margin_bottom = 15.0
 custom_fonts/font = SubResource( 4 )
 text = "Player 2"
 
+[node name="Key" type="Label" parent="Background"]
+margin_left = 5.0
+margin_top = 45.0
+margin_right = 50.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.7, 0.9 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Key"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="Background"]
+margin_left = 53.0
+margin_top = 45.0
+margin_right = 105.0
+margin_bottom = 68.0
+rect_scale = Vector2( 0.896028, 0.7916 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Action
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WASD" type="TextureRect" parent="Background"]
+margin_left = 2.512
+margin_top = 67.0
+margin_right = 358.512
+margin_bottom = 367.0
+rect_scale = Vector2( 0.0823122, 0.10833 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Move" type="Label" parent="Background"]
+margin_left = 61.656
+margin_top = 85.0
+margin_right = 106.656
+margin_bottom = 95.0
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Space" type="Label" parent="Background"]
+margin_left = 3.722
+margin_top = 116.0
+margin_right = 48.722
+margin_bottom = 126.0
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Space"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fire" type="Label" parent="Background"]
+margin_left = 62.979
+margin_top = 116.0
+margin_right = 107.979
+margin_bottom = 139.0
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "fire
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Key2" type="Label" parent="Background"]
+margin_left = 292.883
+margin_top = 45.8667
+margin_right = 337.883
+margin_bottom = 55.8667
+rect_scale = Vector2( 0.841449, 1 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Key"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action2" type="Label" parent="Background"]
+margin_left = 352.314
+margin_top = 45.0
+margin_right = 404.314
+margin_bottom = 68.0
+rect_scale = Vector2( 0.896028, 0.7916 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Action
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrowkey" type="TextureRect" parent="Background"]
+margin_left = 285.986
+margin_top = 62.4174
+margin_right = 641.986
+margin_bottom = 362.417
+rect_scale = Vector2( 0.142548, 0.160539 )
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move2" type="Label" parent="Background"]
+margin_left = 361.893
+margin_top = 85.0
+margin_right = 406.893
+margin_bottom = 95.0
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ctrl" type="Label" parent="Background"]
+margin_left = 298.459
+margin_top = 116.0
+margin_right = 343.459
+margin_bottom = 126.0
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Ctrl"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fire2" type="Label" parent="Background"]
+margin_left = 362.297
+margin_top = 116.0
+margin_right = 407.297
+margin_bottom = 126.0
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Fire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ButtonBack" type="Button" parent="."]
 margin_left = 440.0
 margin_top = 622.409
 margin_right = 840.0
 margin_bottom = 682.409
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -128,7 +295,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Audio/VBoxContainer"]
 margin_right = 368.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 text = "Sound"
 
 [node name="music" type="Label" parent="Audio"]
@@ -136,7 +303,7 @@ margin_left = 458.397
 margin_top = 169.59
 margin_right = 573.397
 margin_bottom = 198.59
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = "Music Volume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -154,5 +321,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Buttonsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="mouse_entered" from="ButtonBack" to="." method="_on_ButtonBack_mouse_entered"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_Button_pressed"]
 [connection signal="value_changed" from="Audio/music/Musicvolume" to="Audio/music/Musicvolume" method="_on_Musicvolume_value_changed"]
