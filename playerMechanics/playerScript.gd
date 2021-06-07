@@ -51,7 +51,7 @@ func _physics_process(delta):
 		#Check if the player let go of the jump button
 		var is_jump_interrupted: = Input.is_action_just_released(up) and _velocity.y < 0.0
 		var direction: = get_direction()
-		_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+		_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted) 
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 		
 		#Changing Sprites for left and right
@@ -76,7 +76,7 @@ func calculate_move_velocity(
 		move.x = speed.x * direction.x
 		move.y += gravity * get_physics_process_delta_time()  #Maybe play with gravity for a gamemode?
 		if direction.y == -1.0:
-			move.y = speed.y * direction.y
+			move.y = speed.y * direction.y + 100
 		if is_jump_interrupted:
 			move.y = fall_speed
 			
