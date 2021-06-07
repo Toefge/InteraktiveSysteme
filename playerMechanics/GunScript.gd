@@ -45,6 +45,7 @@ func _physics_process(delta):
 			bullet_instance.modulate = bulletColor
 			bullet_instance.rotation = rotation
 			bullet_instance.global_position = $muzzle.global_position
+			$ShootSound.play()
 			get_parent().add_child(bullet_instance)
 			shots -= 1
 			print("bullets left: ", shots)

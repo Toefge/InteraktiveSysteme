@@ -633,6 +633,7 @@ tile_data = PoolIntArray( -65497, 19, 0, -65496, 19, 0, -65495, 19, 0, 65535, 7,
 position = Vector2( 60, 672 )
 
 [node name="player2" parent="." instance=ExtResource( 2 )]
+self_modulate = Color( 0.215686, 0.439216, 0.964706, 1 )
 position = Vector2( 1200, 670.774 )
 script = ExtResource( 7 )
 speed = Vector2( 300, 1000 )

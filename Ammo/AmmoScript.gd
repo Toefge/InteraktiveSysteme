@@ -18,6 +18,7 @@ func AmmoUpdate():
 
 func Reload():
 	var currentAmmo = get_parent().get_node("Gun").shots
+	$ReloadSound.play()
 	bullets.value = currentAmmo
 	
 	
