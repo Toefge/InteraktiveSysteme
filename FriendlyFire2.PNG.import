@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shooter.png-7b025cd7cada9fac47cac531ecbc2d19.stex"
+path="res://.import/FriendlyFire2.PNG-8c00cbcd03cc074dace792dd8029dfb0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shooter.png"
-dest_files=[ "res://.import/shooter.png-7b025cd7cada9fac47cac531ecbc2d19.stex" ]
+source_file="res://FriendlyFire2.PNG"
+dest_files=[ "res://.import/FriendlyFire2.PNG-8c00cbcd03cc074dace792dd8029dfb0.stex" ]
 
 [params]
 
