@@ -55,7 +55,7 @@ func _physics_process(delta):
 			yield(get_tree().create_timer(0.2), "timeout")
 			_count_Shots()
 			
-		if Input.is_action_just_pressed("dada"): #Change dada for Reload
+		if Input.is_action_just_pressed("Reload"): 
 			if can_fire == false:
 				_reload()
 		
