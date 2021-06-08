@@ -76,7 +76,7 @@ func calculate_move_velocity(
 		move.x = speed.x * direction.x
 		move.y += gravity * get_physics_process_delta_time()  #Maybe play with gravity for a gamemode?
 		if direction.y == -1.0:
-			move.y = speed.y * direction.y + 100
+			move.y = speed.y * direction.y 
 		if is_jump_interrupted:
 			move.y = fall_speed
 			
