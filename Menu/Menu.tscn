@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/back.PNG" type="Texture" id=2]
-[ext_resource path="res://Sound/29301__junggle__btn121.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sound/ButtonClick.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/sPlayer.png" type="Texture" id=4]
 [ext_resource path="res://assets/sPlayer_r_strip4.png" type="Texture" id=5]
 [ext_resource path="res://assets/sPlayer_a_strip2.png" type="Texture" id=6]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Menu/GunLookAt.gd" type="Script" id=8]
 [ext_resource path="res://assets/sGun.png" type="Texture" id=9]
 [ext_resource path="res://Sound/Path to Lake Land.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sound/ButtonHover.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/MinecraftTitle.ttf"
@@ -234,8 +235,12 @@ offset = Vector2( 0, -5 )
 flip_v = true
 script = ExtResource( 8 )
 
-[node name="Buttonsound" type="AudioStreamPlayer2D" parent="."]
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+
 [connection signal="mouse_entered" from="ButtonStart" to="." method="_on_ButtonStart_mouse_entered"]
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="mouse_entered" from="ButtonOption" to="." method="_on_ButtonOption_mouse_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/wall.png" type="Texture" id=1]
 [ext_resource path="res://playerMechanics/playerMechanics.tscn" type="PackedScene" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://CollectableItems/SpawnItems.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/MinecraftTitle.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Demo/DemoGame.gd" type="Script" id=10]
-[ext_resource path="res://Sound/29301__junggle__btn121.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/ButtonClick.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/ButtonHover.wav" type="AudioStream" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -685,7 +686,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Buttonsound" type="AudioStreamPlayer2D" parent="."]
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
 
 [connection signal="killed" from="player1" to="HUD" method="_on_player1_killed"]
