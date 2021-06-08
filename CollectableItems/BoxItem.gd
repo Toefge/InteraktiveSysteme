@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "player1":
+	if (body.name == "player1") || (body.name == "player2"):
 		body.emit_signal("reload")
 		emit_signal("startTimer")
 		queue_free()
