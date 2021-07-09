@@ -632,6 +632,7 @@ tile_data = PoolIntArray( -65497, 19, 0, -65496, 19, 0, -65495, 19, 0, 65535, 7,
 self_modulate = Color( 0.566406, 0.18364, 0.18364, 1 )
 position = Vector2( 60, 672 )
 color = Color( 0.937255, 0.431373, 0.431373, 1 )
+max_health = 60.0
 
 [node name="player2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1216, 672 )
@@ -641,6 +642,8 @@ up = "ui_up"
 shoot = "fire02"
 orientationLeft = true
 color = Color( 0.215686, 0.439216, 0.964706, 1 )
+max_health = 60.0
+grenadeButton = "GrenadeP2"
 
 [node name="MaxWalljumpHeight" type="Position2D" parent="."]
 position = Vector2( 0, 250 )
@@ -673,7 +676,6 @@ text = "Back To Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="killed" from="player1" to="HUD" method="_on_player1_killed"]
 [connection signal="killed" from="player2" to="HUD" method="_on_player2_killed"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]

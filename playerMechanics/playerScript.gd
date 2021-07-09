@@ -33,6 +33,12 @@ var dead = false
 #HealthBar
 var healthBar = preload("res://HealthBar/HealthBarScript.gd")
 	
+#Grenade
+const grenade = preload("res://Grenade/Grenade.tscn")
+export (float) var throwStrenght = 2
+var flipped = true
+export var grenadeButton = "GrenadeP1"
+
 func _ready():
 	$AnimatedSprite.flip_h = orientationLeft
 	$Gun.flipGun(orientationLeft)
@@ -57,9 +63,15 @@ func _physics_process(delta):
 		#Changing Sprites for left and right
 		if Input.is_action_just_pressed(left):
 			$AnimatedSprite.flip_h = true
+			flipped = false
 		elif Input.is_action_just_pressed(right):
 			$AnimatedSprite.flip_h = false
+			flipped = true
 
+
+	if Input.is_action_just_pressed(grenadeButton):
+		_ThrowGrenade()
+		
 #Check which keys the player is pressing to move
 func get_direction() -> Vector2:
 	return Vector2(
@@ -154,3 +166,16 @@ func _set_health(value):
 			kill()
 			emit_signal("killed")
 
+func _ThrowGrenade():
+	var nade_instance = grenade.instance()
+	#nade_instance.rotation = rotation
+	
+	get_parent().add_child(nade_instance)
+	if flipped == true:
+		nade_instance.global_position = $Gun/muzzle2.global_position 
+		nade_instance.launch(throwStrenght )
+	if flipped == false:
+		nade_instance.global_position = $Gun/muzzle3.global_position
+		nade_instance.launch(throwStrenght * -1)
+	print("Watch out!")
+	

@@ -11,13 +11,18 @@ Box = ExtResource( 2 )
 position = Vector2( 640, 192 )
 
 [node name="BoxSpawnPosition2" type="Position2D" parent="."]
-position = Vector2( 304, 96 )
+position = Vector2( 287.621, 96 )
 
 [node name="BoxSpawnPosition3" type="Position2D" parent="."]
-position = Vector2( 992, 96 )
+position = Vector2( 984.441, 94.7401 )
+
+[node name="BoxSpawnPosition4" type="Position2D" parent="."]
+position = Vector2( 1074.19, 554.104 )
+
+[node name="BoxSpawnPosition5" type="Position2D" parent="."]
+position = Vector2( 241.329, 555.798 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 4.5
+wait_time = 2.0
 one_shot = true
-
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

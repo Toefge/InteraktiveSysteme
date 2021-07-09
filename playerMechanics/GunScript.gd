@@ -36,7 +36,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed(left):
 			look_at(Vector2(position.x * -1 , position.y))
 		if Input.is_action_just_pressed(right):
-			look_at(Vector2(100000,position.y))
+			look_at(Vector2(10000,position.y))
 		#var mouse_pos = get_global_mouse_position()
 		#look_at(mouse_pos)
 	

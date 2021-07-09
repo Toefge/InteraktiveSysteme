@@ -10,7 +10,7 @@ func _ready():
 	add_child(box)
 	box.position = $BoxSpawnPosition1.position
 	
-	box.connect("startTimer", self, "spawnNewBox")
+	box.connect("startTimer", self, "spawnNewBox")	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -28,10 +28,14 @@ func _on_SpawnTimer_timeout():
 	box.connect("startTimer", self, "spawnNewBox")
 	
 func randomPosition():
-	match randi() % 3 +1:
+	match randi() % 5 +1:
 		1:
 			return $BoxSpawnPosition1.position
 		2:
 			return $BoxSpawnPosition2.position
 		3:
 			return $BoxSpawnPosition3.position
+		4:
+			return $BoxSpawnPosition4.position
+		5:
+			return $BoxSpawnPosition5.position
