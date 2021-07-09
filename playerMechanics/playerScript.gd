@@ -178,4 +178,5 @@ func _ThrowGrenade():
 		nade_instance.global_position = $Gun/muzzle3.global_position
 		nade_instance.launch(throwStrenght * -1)
 	print("Watch out!")
+	#nade_instance._on_NadeTimer_timeout()
 	

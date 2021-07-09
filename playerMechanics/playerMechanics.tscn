@@ -25,33 +25,33 @@ extents = Vector2( 8.02926, 15.5354 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 48, 48 )
+region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 144, 0, 48, 48 )
+region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 48, 48 )
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 48, 0, 48, 48 )
+atlas = ExtResource( 4 )
+region = Rect2( 144, 0, 48, 48 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -60,15 +60,15 @@ animations = [ {
 "name": "idle",
 "speed": 4.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "run",
-"speed": 14.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "jump",
 "speed": 1.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 14.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=9]
@@ -111,10 +111,10 @@ script = ExtResource( 1 )
 position = Vector2( 15.8199, -0.259336 )
 
 [node name="muzzle2" type="Position2D" parent="Gun"]
-position = Vector2( 22.5, -32 )
+position = Vector2( 30.5136, -34.0045 )
 
 [node name="muzzle3" type="Position2D" parent="Gun"]
-position = Vector2( 22.5, 32 )
+position = Vector2( 31.1634, 31.3318 )
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="Gun"]
 stream = ExtResource( 17 )
