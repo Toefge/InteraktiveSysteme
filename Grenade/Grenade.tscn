@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/NadeCut.png" type="Texture" id=1]
 [ext_resource path="res://Grenade/GrenadeScript.gd" type="Script" id=2]
 [ext_resource path="res://assets/Boom.png" type="Texture" id=3]
+[ext_resource path="res://Grenade/DamageAreaGrenade.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,16 +44,19 @@ one_shot = true
 autostart = true
 
 [node name="Boom" type="AnimatedSprite" parent="."]
-position = Vector2( 0.277786, -1.5263 )
-scale = Vector2( 0.343027, 0.332337 )
+position = Vector2( 3.99456, -8.49568 )
+scale = Vector2( 0.896483, 0.862713 )
 frames = SubResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boom"]
-scale = Vector2( 1, 1 )
+[node name="Area2D" type="Area2D" parent="Boom"]
+collision_mask = 32
+script = ExtResource( 4 )
+damage_amount = 50.0
+
+[node name="GrenadeHitbox" type="CollisionShape2D" parent="Boom/Area2D"]
+position = Vector2( -1.35054, 0.693825 )
 shape = SubResource( 4 )
 disabled = true
-
-[node name="Area2D" type="Area2D" parent="Boom"]
-scale = Vector2( 1, 1 )
 [connection signal="timeStart" from="." to="." method="_on_Grenade_timeStart"]
 [connection signal="timeout" from="NadeTimer" to="." method="_on_NadeTimer_timeout"]
+[connection signal="area_entered" from="Boom/Area2D" to="Boom/Area2D" method="_on_Area2D_area_entered"]

@@ -2,8 +2,6 @@ extends Area2D
 
 export var speed = 500
 
-
-
 func _ready():
 	set_as_toplevel(true)
 	

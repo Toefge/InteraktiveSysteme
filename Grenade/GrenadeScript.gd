@@ -41,8 +41,11 @@ func _on_impact(normal: Vector2):
 func _on_NadeTimer_timeout():
 	print("Timer reached 0")
 	$Boom.show()
+	$Boom/Area2D/GrenadeHitbox.disabled = false
 	yield(get_tree().create_timer(0.7), "timeout")
 	get_parent().remove_child(nade_instance)
 
 #func _on_Grenade_timeStart():
 #	$NadeTimer.start(5)
+
+
