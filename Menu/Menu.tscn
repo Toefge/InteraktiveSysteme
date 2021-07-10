@@ -1,7 +1,7 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/back.PNG" type="Texture" id=2]
+[ext_resource path="res://assets/desert_BG.png" type="Texture" id=2]
 [ext_resource path="res://Sound/ButtonClick.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/sPlayer.png" type="Texture" id=4]
 [ext_resource path="res://assets/sPlayer_r_strip4.png" type="Texture" id=5]
@@ -9,7 +9,6 @@
 [ext_resource path="res://assets/sPlayer2.png" type="Texture" id=7]
 [ext_resource path="res://Menu/GunLookAt.gd" type="Script" id=8]
 [ext_resource path="res://assets/sGun.png" type="Texture" id=9]
-[ext_resource path="res://Sound/Path to Lake Land.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Sound/ButtonHover.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -194,7 +193,6 @@ __meta__ = {
 }
 
 [node name="Backgroundsound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 10 )
 volume_db = -15.241
 autoplay = true
 
@@ -205,7 +203,6 @@ position = Vector2( 256, 400 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 15 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Player2" type="AnimatedSprite" parent="."]
@@ -215,6 +212,7 @@ position = Vector2( 1072, 400 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 15 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
@@ -240,6 +238,7 @@ stream = ExtResource( 11 )
 
 [node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+
 [connection signal="mouse_entered" from="ButtonStart" to="." method="_on_ButtonStart_mouse_entered"]
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="mouse_entered" from="ButtonOption" to="." method="_on_ButtonOption_mouse_entered"]

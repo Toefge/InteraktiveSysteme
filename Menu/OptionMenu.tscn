@@ -112,6 +112,19 @@ margin_bottom = 15.0
 custom_fonts/font = SubResource( 4 )
 text = "Player 2"
 
+[node name="Grenade 2" type="Label" parent="Background"]
+margin_left = 352.328
+margin_top = 241.436
+margin_right = 418.328
+margin_bottom = 251.436
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Grenade"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Key" type="Label" parent="Background"]
 margin_left = 23.5786
 margin_top = 112.681
@@ -215,11 +228,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Shift" type="Label" parent="Background"]
+margin_left = 471.832
+margin_top = 244.98
+margin_right = 516.832
+margin_bottom = 254.98
+rect_scale = Vector2( 0.754463, 0.923944 )
+rect_pivot_offset = Vector2( -738.101, -57.1906 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Shift"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Arrowkey" type="TextureRect" parent="Background"]
-margin_left = 280.713
-margin_top = 147.0
-margin_right = 636.713
-margin_bottom = 438.713
+margin_left = 280.133
+margin_top = 142.942
+margin_right = 636.133
+margin_bottom = 434.655
 rect_scale = Vector2( 0.142548, 0.160539 )
 texture = ExtResource( 6 )
 expand = true
@@ -229,9 +256,9 @@ __meta__ = {
 
 [node name="Move2" type="Label" parent="Background"]
 margin_left = 353.769
-margin_top = 168.578
+margin_top = 163.709
 margin_right = 398.769
-margin_bottom = 191.233
+margin_bottom = 186.364
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -241,10 +268,10 @@ __meta__ = {
 }
 
 [node name="ctrl" type="Label" parent="Background"]
-margin_left = 294.358
-margin_top = 214.0
-margin_right = 339.358
-margin_bottom = 218.704
+margin_left = 290.955
+margin_top = 206.067
+margin_right = 335.955
+margin_bottom = 216.067
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -254,14 +281,41 @@ __meta__ = {
 }
 
 [node name="fire2" type="Label" parent="Background"]
-margin_left = 354.788
-margin_top = 213.536
-margin_right = 399.788
-margin_bottom = 223.536
+margin_left = 354.897
+margin_top = 206.455
+margin_right = 399.897
+margin_bottom = 216.455
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 text = "Fire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E" type="Label" parent="Background"]
+margin_left = 33.8928
+margin_top = 248.096
+margin_right = 78.8928
+margin_bottom = 258.096
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grenade 1" type="Label" parent="Background"]
+margin_left = 75.364
+margin_top = 247.971
+margin_right = 141.364
+margin_bottom = 270.971
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Grenade
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
