@@ -31,7 +31,8 @@ func _on_ButtonOption_pressed():
 	get_node("OptionMenu").connect("CloseOptionMenu", self, "CloseOptionMenu")
 	
 func CloseOptionMenu():
-	get_node("OptionMenu").queue_free()
+	for child in get_children():
+		child.queue_free()
 
 
 

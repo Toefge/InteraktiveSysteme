@@ -153,9 +153,9 @@ frames = SubResource( 10 )
 animation = "death"
 
 [node name="Ammo" parent="." instance=ExtResource( 13 )]
-margin_left = -53.87
+margin_left = -53.5727
 margin_top = -85.1861
-margin_right = -53.4941
+margin_right = -53.1968
 margin_bottom = -85.1861
 rect_scale = Vector2( 0.0415326, 0.0479937 )
 script = ExtResource( 14 )
@@ -164,5 +164,6 @@ script = ExtResource( 14 )
 position = Vector2( 1297.05, 1774.94 )
 scale = Vector2( 24.0775, 20.8361 )
 stream = ExtResource( 19 )
+
 [connection signal="reload" from="." to="Gun" method="_on_player_reload"]
 [connection signal="demoShoot" from="Gun" to="Gun" method="_on_Gun_demoShoot"]

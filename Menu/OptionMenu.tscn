@@ -72,9 +72,8 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 1.70288
 margin_right = 390.0
-margin_bottom = 297.703
+margin_bottom = 296.0
 rect_scale = Vector2( 2.97071, 2.12155 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -114,9 +113,9 @@ text = "Player 2"
 
 [node name="Grenade 2" type="Label" parent="Background"]
 margin_left = 352.328
-margin_top = 241.436
+margin_top = 248.096
 margin_right = 418.328
-margin_bottom = 251.436
+margin_bottom = 258.096
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -139,9 +138,9 @@ __meta__ = {
 }
 
 [node name="Action" type="Label" parent="Background"]
-margin_left = 72.0902
+margin_left = 75.364
 margin_top = 112.681
-margin_right = 124.09
+margin_right = 127.364
 margin_bottom = 135.681
 rect_scale = Vector2( 0.896028, 0.7916 )
 size_flags_horizontal = 3
@@ -162,10 +161,10 @@ texture = ExtResource( 5 )
 expand = true
 
 [node name="Move" type="Label" parent="Background"]
-margin_left = 77.4968
-margin_top = 163.617
-margin_right = 122.497
-margin_bottom = 173.617
+margin_left = 75.364
+margin_top = 161.343
+margin_right = 120.364
+margin_bottom = 171.343
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -187,11 +186,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Shift" type="Label" parent="Background"]
+margin_left = 291.125
+margin_top = 248.096
+margin_right = 336.125
+margin_bottom = 260.096
+rect_scale = Vector2( 0.754463, 0.923944 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+text = "Shift"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Fire" type="Label" parent="Background"]
-margin_left = 78.722
-margin_top = 215.253
-margin_right = 123.722
-margin_bottom = 238.253
+margin_left = 75.364
+margin_top = 214.135
+margin_right = 120.364
+margin_bottom = 237.135
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -215,29 +227,15 @@ __meta__ = {
 }
 
 [node name="Action2" type="Label" parent="Background"]
-margin_left = 348.213
-margin_top = 108.99
-margin_right = 400.213
-margin_bottom = 131.99
+margin_left = 352.328
+margin_top = 106.575
+margin_right = 404.328
+margin_bottom = 129.575
 rect_scale = Vector2( 0.896028, 0.7916 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 text = "Action
 "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Shift" type="Label" parent="Background"]
-margin_left = 471.832
-margin_top = 244.98
-margin_right = 516.832
-margin_bottom = 254.98
-rect_scale = Vector2( 0.754463, 0.923944 )
-rect_pivot_offset = Vector2( -738.101, -57.1906 )
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-text = "Shift"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -255,10 +253,10 @@ __meta__ = {
 }
 
 [node name="Move2" type="Label" parent="Background"]
-margin_left = 353.769
-margin_top = 163.709
-margin_right = 398.769
-margin_bottom = 186.364
+margin_left = 352.328
+margin_top = 161.343
+margin_right = 397.328
+margin_bottom = 183.998
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -268,10 +266,10 @@ __meta__ = {
 }
 
 [node name="ctrl" type="Label" parent="Background"]
-margin_left = 290.955
-margin_top = 206.067
-margin_right = 335.955
-margin_bottom = 216.067
+margin_left = 290.037
+margin_top = 214.134
+margin_right = 335.037
+margin_bottom = 224.134
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -281,10 +279,10 @@ __meta__ = {
 }
 
 [node name="fire2" type="Label" parent="Background"]
-margin_left = 354.897
-margin_top = 206.455
-margin_right = 399.897
-margin_bottom = 216.455
+margin_left = 352.328
+margin_top = 214.962
+margin_right = 397.328
+margin_bottom = 224.962
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
@@ -294,9 +292,9 @@ __meta__ = {
 }
 
 [node name="E" type="Label" parent="Background"]
-margin_left = 33.8928
+margin_left = 23.854
 margin_top = 248.096
-margin_right = 78.8928
+margin_right = 32.854
 margin_bottom = 258.096
 rect_scale = Vector2( 0.754463, 0.923944 )
 size_flags_horizontal = 3

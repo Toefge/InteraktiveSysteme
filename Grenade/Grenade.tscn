@@ -4,24 +4,10 @@
 [ext_resource path="res://Grenade/GrenadeScript.gd" type="Script" id=2]
 [ext_resource path="res://assets/Boom.png" type="Texture" id=3]
 [ext_resource path="res://Grenade/DamageAreaGrenade.gd" type="Script" id=4]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[ext_resource path="res://Sound/GrenadeExplosion.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound/LaunchGrenade.wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=2]
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 89.518
@@ -29,10 +15,10 @@ radius = 89.518
 [node name="Grenade" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="Sprite" parent="."]
 position = Vector2( 0.891905, -0.594604 )
 scale = Vector2( 1.14865, 1.18581 )
-frames = SubResource( 1 )
+texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -43,10 +29,10 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="Boom" type="AnimatedSprite" parent="."]
-position = Vector2( 3.99456, -8.49568 )
-scale = Vector2( 0.896483, 0.862713 )
-frames = SubResource( 3 )
+[node name="Boom" type="Sprite" parent="."]
+position = Vector2( 0, -10 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Boom"]
 collision_mask = 32
@@ -57,6 +43,12 @@ damage_amount = 50.0
 position = Vector2( -1.35054, 0.693825 )
 shape = SubResource( 4 )
 disabled = true
-[connection signal="timeStart" from="." to="." method="_on_Grenade_timeStart"]
+
+[node name="LaunchSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
 [connection signal="timeout" from="NadeTimer" to="." method="_on_NadeTimer_timeout"]
 [connection signal="area_entered" from="Boom/Area2D" to="Boom/Area2D" method="_on_Area2D_area_entered"]
