@@ -132,7 +132,7 @@ func damage(amount):
 func kill():
 	dead = true
 	$AnimatedSprite.hide()
-	$Gun.hide()
+	#$Gun.hide()
 	if ($AnimatedSprite.flip_h):
 		$DeadPlayer.flip_h = true
 		$DeadPlayer.show()
@@ -142,6 +142,7 @@ func kill():
 		$DeadPlayer.play("death")
 		
 	yield(get_tree().create_timer(1), "timeout")
+	$DeadPlayer.hide()
 	respawn()
 	
 func respawn():
@@ -151,10 +152,10 @@ func respawn():
 		self.position = get_node("/root/game/SpawnPosition1").position
 	else:
 		self.position = get_node("/root/game/SpawnPosition2").position
-	$DeadPlayer.hide()
+
 	$HealthBar._on_health_updated()
 	$AnimatedSprite.show()
-	$Gun.show()
+	#$Gun.show()
 	
 func _set_health(value):
 	var prev_health = health

@@ -58,6 +58,8 @@ position = Vector2( 400, 0 )
 scale = Vector2( 0.32, 0.32 )
 frames = SubResource( 1 )
 animation = "Fliegen"
+frame = 2
+playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fliegen = SubResource( 2 )
