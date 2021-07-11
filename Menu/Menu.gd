@@ -34,8 +34,6 @@ func CloseOptionMenu():
 	for child in get_children():
 		child.queue_free()
 
-
-
 func _on_ButtonStart_mouse_entered():
 	$ButtonHover.play()
 	pass # Replace with function body.

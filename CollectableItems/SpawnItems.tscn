@@ -22,7 +22,13 @@ position = Vector2( 1074.19, 554.104 )
 [node name="BoxSpawnPosition5" type="Position2D" parent="."]
 position = Vector2( 241.329, 555.798 )
 
-[node name="SpawnTimer" type="Timer" parent="."]
+[node name="SpawnTimer1" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+
+[node name="SpawnTimer2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer1" to="." method="_on_SpawnTimer1_timeout"]
+[connection signal="timeout" from="SpawnTimer2" to="." method="_on_SpawnTimer2_timeout"]

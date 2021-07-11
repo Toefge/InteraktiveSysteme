@@ -1,29 +1,26 @@
 extends Node2D
 
 
-#const IDLE_Duration = 0.5
-
-export var move_to = Vector2.RIGHT * 100
-export var speed = 3.0
-
-var follow = Vector2.ZERO
-
-onready var platform = $Platform
-onready var tween = $MoveTween
+export (PackedScene) var spikeBall;
+var direction = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_init_tween()
-	
-func _init_tween():
-	var duration = move_to.length() / speed
-	tween.interpolate_property(self, "follow", Vector2.ZERO, move_to, duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
-	tween.interpolate_property(self, "follow", move_to, Vector2.ZERO, duration, Tween.TRANS_LINEAR, Tween.EASE_IN, duration)
-	tween.start()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	$AnimationPlayer.play("Fliegen")
 
-func _physics_process(delta):
-	platform.position = platform.position.linear_interpolate(follow, 0.075)
+func _on_SpawnSpikeBallTimer_timeout():
+	$SpawnSpikeBallTimer.wait_time = randomTime()
+	var ball = spikeBall.instance()
+	ball.position = $AnimatedSprite.position
+	ball.direction = direction
+	add_child(ball)
+	
+func changeDirection():
+	if(direction == 1):
+		direction = -1
+	else:
+		direction = 1
+	print(direction)
+
+func randomTime():
+	return (randi() % 5 + 4)
