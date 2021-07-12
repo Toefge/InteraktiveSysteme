@@ -4,9 +4,9 @@
 [ext_resource path="res://Mobs/Platform.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 136, 24 )
+extents = Vector2( 136, 20.7682 )
 
-[node name="PlatformEnemy" type="Node2D"]
+[node name="Platform" type="Node2D"]
 light_mask = 3
 script = ExtResource( 2 )
 speed = 100.0
