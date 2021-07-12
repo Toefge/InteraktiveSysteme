@@ -8,11 +8,6 @@ func _ready():
 func _process(delta):
 	position += (Vector2.RIGHT*speed).rotated(rotation) * delta
 	Vector2(1,0)
-	
-func _physics_process(delta):
-	yield(get_tree().create_timer(0.01),"timeout")
-	$Sprite.frame = 1
-	set_physics_process(false)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
