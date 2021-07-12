@@ -148,6 +148,7 @@ func kill():
 func respawn():
 	dead = false
 	health = max_health
+	$Gun._reload()
 	if(self.name == "player1"):
 		self.position = get_node("/root/game/SpawnPosition1").position
 	else:

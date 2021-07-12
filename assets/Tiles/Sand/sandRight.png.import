@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/base_out_atlas.png-fa945a18cab0007dff8399341fe3a287.stex"
+path="res://.import/sandRight.png-759f413cb337797d3bda6a97f42a5a74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://base_out_atlas.png"
-dest_files=[ "res://.import/base_out_atlas.png-fa945a18cab0007dff8399341fe3a287.stex" ]
+source_file="res://assets/Tiles/Sand/sandRight.png"
+dest_files=[ "res://.import/sandRight.png-759f413cb337797d3bda6a97f42a5a74.stex" ]
 
 [params]
 

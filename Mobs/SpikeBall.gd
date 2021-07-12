@@ -8,8 +8,8 @@ func _ready():
 
 func _physics_process(delta):
 	if (init):
-		apply_central_impulse(Vector2(direction * 7, 0))
-	angular_velocity = direction * 5
+		apply_central_impulse(Vector2(direction * 4, 0))
+	angular_velocity = direction * 3
 	#apply_impulse(Vector2(1, 0) ,Vector2(10, 0))
 
 func _on_DeleteTimer_timeout():

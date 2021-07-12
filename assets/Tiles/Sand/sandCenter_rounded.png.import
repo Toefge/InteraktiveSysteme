@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/classical_ruin_tiles.png-f2286eefd603e45cf8d9a373851798ad.stex"
+path="res://.import/sandCenter_rounded.png-51e4b9b9aa4db6ca26e9f73895fb9d81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/classical_ruin_tiles.png"
-dest_files=[ "res://.import/classical_ruin_tiles.png-f2286eefd603e45cf8d9a373851798ad.stex" ]
+source_file="res://assets/Tiles/Sand/sandCenter_rounded.png"
+dest_files=[ "res://.import/sandCenter_rounded.png-51e4b9b9aa4db6ca26e9f73895fb9d81.stex" ]
 
 [params]
 

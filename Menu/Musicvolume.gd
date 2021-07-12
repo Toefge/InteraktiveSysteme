@@ -2,7 +2,7 @@ extends HSlider
 
 
 func _ready():
-	pass # Replace with function body.
+	value = AudioServer.get_bus_volume_db(0)
 
 
 

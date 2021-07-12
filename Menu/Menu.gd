@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	pass
+	AudioServer.set_bus_volume_db(0,-15)
 
 
 func _on_ButtonStart_pressed():

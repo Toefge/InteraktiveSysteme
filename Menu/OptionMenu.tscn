@@ -375,10 +375,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
-[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
 [connection signal="mouse_entered" from="ButtonBack" to="." method="_on_ButtonBack_mouse_entered"]

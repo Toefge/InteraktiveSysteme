@@ -16,7 +16,7 @@
 [ext_resource path="res://Ammo/AmmoScript.gd" type="Script" id=14]
 [ext_resource path="res://assets/sPlayer_death_2.png" type="Texture" id=15]
 [ext_resource path="res://assets/sPlayer_death_4.png" type="Texture" id=16]
-[ext_resource path="res://Sound/ShootSound.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sound/Revolver.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/sPlayer_death_5.png" type="Texture" id=18]
 [ext_resource path="res://Sound/ReloadSound.wav" type="AudioStream" id=19]
 
