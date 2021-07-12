@@ -433,6 +433,7 @@ shoot = "fire02"
 orientationLeft = true
 color = Color( 0.215686, 0.439216, 0.964706, 1 )
 max_health = 60.0
+flipped = false
 grenadeButton = "GrenadeP2"
 
 [node name="MaxWalljumpHeight" type="Position2D" parent="."]
@@ -471,7 +472,6 @@ __meta__ = {
 stream = ExtResource( 15 )
 volume_db = -20.0
 autoplay = true
-
 [connection signal="killed" from="player1" to="HUD" method="_on_player1_killed"]
 [connection signal="killed" from="player2" to="HUD" method="_on_player2_killed"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]

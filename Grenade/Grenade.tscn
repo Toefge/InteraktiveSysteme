@@ -49,6 +49,5 @@ stream = ExtResource( 6 )
 
 [node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
-
 [connection signal="timeout" from="NadeTimer" to="." method="_on_NadeTimer_timeout"]
 [connection signal="area_entered" from="Boom/Area2D" to="Boom/Area2D" method="_on_Area2D_area_entered"]

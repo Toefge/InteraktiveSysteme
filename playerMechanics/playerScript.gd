@@ -36,7 +36,7 @@ var healthBar = preload("res://HealthBar/HealthBarScript.gd")
 #Grenade
 const grenade = preload("res://Grenade/Grenade.tscn")
 export (float) var throwStrenght = 2
-var flipped = true
+export var flipped = true
 export var grenadeButton = "GrenadeP1"
 
 func _ready():
@@ -69,7 +69,7 @@ func _physics_process(delta):
 			flipped = true
 
 
-	if Input.is_action_just_pressed(grenadeButton):
+	if Input.is_action_just_pressed(grenadeButton) and $Gun.can_throw:
 		_ThrowGrenade()
 		
 #Check which keys the player is pressing to move
@@ -179,6 +179,7 @@ func _ThrowGrenade():
 	if flipped == false:
 		nade_instance.global_position = $Gun/muzzle3.global_position
 		nade_instance.launch(throwStrenght * -1)
-	print("Watch out!")
-	
+	$Gun.grenades -= 1
+	$GrenadeBar.NadeUpdate()
+	$Gun._count_Shots()
 	

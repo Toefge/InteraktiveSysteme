@@ -1,6 +1,7 @@
 extends Sprite
 
 var can_fire = true
+var can_throw = true
 var bullet = preload("res://Bullet/bullet.tscn")
 var left = "left"
 var right = "right"
@@ -9,6 +10,7 @@ var bulletColor = Color.blue
 
 var ammo = preload("res://Ammo/AmmoScript.gd")
 var shots = 6
+var grenades = 2
 
 signal demoShoot()
 var demo = false
@@ -22,11 +24,19 @@ func _count_Shots():    #As the name says
 		can_fire = true
 	if shots <= 0:
 		can_fire = false
+	if grenades > 0:
+		can_throw = true
+	if grenades <= 0:
+		can_throw = false
 	
 func _reload():
 	shots = 6
+	grenades = 2
 	get_parent().get_node("Ammo").Reload()
+	get_parent().get_node("GrenadeBar").Reload()
 	can_fire = true
+	can_throw = true
+	
 	
 	
 func _physics_process(delta):
@@ -58,6 +68,21 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("Reload"): 
 			if can_fire == false:
 				_reload()
+		
+		if Input.is_action_pressed(shoot) and can_fire:
+			var bullet_instance = bullet.instance()
+			bullet_instance.modulate = bulletColor
+			bullet_instance.rotation = rotation
+			bullet_instance.global_position = $muzzle.global_position
+			$ShootSound.play()
+			get_parent().add_child(bullet_instance)
+			shots -= 1
+			print("bullets left: ", shots)
+			can_fire = false
+			get_parent().get_node("Ammo").AmmoUpdate()
+			#decides how often can the player shoot
+			yield(get_tree().create_timer(0.2), "timeout")
+			_count_Shots()
 		
 		#can_fire = true
 		

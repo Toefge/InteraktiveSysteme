@@ -46,4 +46,3 @@ func _on_NadeTimer_timeout():
 	get_parent().remove_child(nade_instance)
 
 
-

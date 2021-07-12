@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://playerMechanics/GunScript.gd" type="Script" id=1]
 [ext_resource path="res://playerMechanics/playerScript.gd" type="Script" id=2]
@@ -19,39 +19,41 @@
 [ext_resource path="res://Sound/Revolver.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/sPlayer_death_5.png" type="Texture" id=18]
 [ext_resource path="res://Sound/ReloadSound.wav" type="AudioStream" id=19]
+[ext_resource path="res://GrenadeBar/GrenadeBar.tscn" type="PackedScene" id=20]
+[ext_resource path="res://GrenadeBar/GrenadeBarScript.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.02926, 15.5354 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 48, 48 )
+region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 144, 0, 48, 48 )
+region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 48, 48 )
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 48, 0, 48, 48 )
+atlas = ExtResource( 4 )
+region = Rect2( 144, 0, 48, 48 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -60,15 +62,15 @@ animations = [ {
 "name": "idle",
 "speed": 4.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "run",
-"speed": 14.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "jump",
 "speed": 1.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 14.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=9]
@@ -165,5 +167,12 @@ position = Vector2( 1297.05, 1774.94 )
 scale = Vector2( 24.0775, 20.8361 )
 stream = ExtResource( 19 )
 
+[node name="GrenadeBar" parent="." instance=ExtResource( 20 )]
+margin_left = -31.7871
+margin_top = -127.635
+margin_right = -31.4111
+margin_bottom = -127.635
+rect_scale = Vector2( 0.0864355, 0.0825909 )
+script = ExtResource( 21 )
 [connection signal="reload" from="." to="Gun" method="_on_player_reload"]
 [connection signal="demoShoot" from="Gun" to="Gun" method="_on_Gun_demoShoot"]
