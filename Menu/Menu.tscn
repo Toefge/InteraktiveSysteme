@@ -241,6 +241,7 @@ stream = ExtResource( 11 )
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
 [connection signal="mouse_entered" from="ButtonStart" to="." method="_on_ButtonStart_mouse_entered"]
 [connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
 [connection signal="mouse_entered" from="ButtonOption" to="." method="_on_ButtonOption_mouse_entered"]

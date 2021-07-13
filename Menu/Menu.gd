@@ -20,7 +20,7 @@ func _on_ButtonExit_pressed():
 func _on_ButtonDemo_pressed():
 	$ButtonClick.play()
 	yield(get_tree().create_timer(0.1), "timeout")
-	get_tree().change_scene("res://Demo/DemoGame.tscn")
+	get_tree().change_scene("res://Demo/Demo.tscn")
 
 
 func _on_ButtonOption_pressed():

@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="shooter"
+config/name="Friendly Fire 2"
 run/main_scene="res://Menu/Menu.tscn"
 
 [display]

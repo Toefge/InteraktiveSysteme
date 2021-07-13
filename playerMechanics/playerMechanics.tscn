@@ -174,5 +174,6 @@ margin_right = -31.4111
 margin_bottom = -127.635
 rect_scale = Vector2( 0.0864355, 0.0825909 )
 script = ExtResource( 21 )
+
 [connection signal="reload" from="." to="Gun" method="_on_player_reload"]
 [connection signal="demoShoot" from="Gun" to="Gun" method="_on_Gun_demoShoot"]
