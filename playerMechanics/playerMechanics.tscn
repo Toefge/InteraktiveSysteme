@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://playerMechanics/GunScript.gd" type="Script" id=1]
 [ext_resource path="res://playerMechanics/playerScript.gd" type="Script" id=2]
@@ -21,6 +21,11 @@
 [ext_resource path="res://Sound/ReloadSound.wav" type="AudioStream" id=19]
 [ext_resource path="res://GrenadeBar/GrenadeBar.tscn" type="PackedScene" id=20]
 [ext_resource path="res://GrenadeBar/GrenadeBarScript.gd" type="Script" id=21]
+[ext_resource path="res://Sound/Hit/Little Fighter Guy - Vocalizations - Crash Bump Fall_01.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sound/Hit/EXCLAMATION_Male_B_Yes_mono.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sound/Hit/Little Fighter Guy - Vocalizations - Crash Bump Fall_10.wav" type="AudioStream" id=24]
+[ext_resource path="res://Sound/Hit/EXCLAMATION_Male_B_Yippee_01_mono.wav" type="AudioStream" id=25]
+[ext_resource path="res://Sound/Hit/G4F SFX05 - Casual - MA3 sfx_voice_woohoo_02.wav" type="AudioStream" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.02926, 15.5354 )
@@ -174,6 +179,26 @@ margin_right = -31.4111
 margin_bottom = -127.635
 rect_scale = Vector2( 0.0864355, 0.0825909 )
 script = ExtResource( 21 )
+
+[node name="Hit1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -10.0
+
+[node name="Hit2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -10.0
+
+[node name="Hit3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -10.0
+
+[node name="Hit4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+volume_db = -10.0
+
+[node name="Hit5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -10.0
 
 [connection signal="reload" from="." to="Gun" method="_on_player_reload"]
 [connection signal="demoShoot" from="Gun" to="Gun" method="_on_Gun_demoShoot"]

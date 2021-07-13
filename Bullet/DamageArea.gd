@@ -15,4 +15,5 @@ func remove_exception(node : Node):
 func _on_DamageArea_area_entered(area):
 	if area is Hitbox:
 		if !exceptions.has(area.entity) && area.entity.has_method("damage"):
-			area.entity.damage(damage_amount) #(damage_amount, self) for testing
+			area.entity.damage(damage_amount, "Bullet") #(damage_amount, self) for testing
+

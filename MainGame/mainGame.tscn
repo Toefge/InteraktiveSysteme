@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://CollectableItems/SpawnItems.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/MinecraftTitle.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Sound/ButtonClick.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/Tiles/Sand/sandRight.png" type="Texture" id=12]
+[ext_resource path="res://Sound/Win/VOICE_Boy_6yo_Try_Again_01.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sound/Win/VOICE_Boy_6yo_You_Win_01.wav" type="AudioStream" id=14]
 [ext_resource path="res://Sound/backgroundmusic.wav" type="AudioStream" id=15]
 [ext_resource path="res://Mobs/TopMob.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/Tiles/Sand/sandCliffAlt_right.png" type="Texture" id=17]
@@ -26,6 +28,10 @@
 [ext_resource path="res://assets/Tiles/Sand/sandCorner_leftg.png" type="Texture" id=26]
 [ext_resource path="res://assets/Tiles/Sand/SandBowl.png" type="Texture" id=27]
 [ext_resource path="res://assets/Tiles/Sand/SandKreis.png" type="Texture" id=28]
+[ext_resource path="res://Sound/Win/VOICE_Boy_6yo_Loser_01.wav" type="AudioStream" id=29]
+[ext_resource path="res://Sound/Win/VOICE_Boy_6yo_I_Win_01.wav" type="AudioStream" id=30]
+[ext_resource path="res://Sound/Win/VOICE_Boy_6yo_Oh_No_01.wav" type="AudioStream" id=31]
+[ext_resource path="res://Sound/Win/VOICE_Boy_6yo_Hahahaha_01_mono.wav" type="AudioStream" id=32]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -453,6 +459,30 @@ grenadeButton = "GrenadeP2"
 position = Vector2( 0, 250 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Win1" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 32 )
+volume_db = -10.0
+
+[node name="Win2" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 30 )
+volume_db = -10.0
+
+[node name="Win3" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 29 )
+volume_db = -10.0
+
+[node name="Win4" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 31 )
+volume_db = -10.0
+
+[node name="Win5" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 13 )
+volume_db = -10.0
+
+[node name="Win6" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 14 )
+volume_db = -10.0
 
 [node name="SpawnPosition1" type="Position2D" parent="."]
 position = Vector2( 60, 672 )

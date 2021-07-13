@@ -123,11 +123,25 @@ func nextToLeftWall():
 	return  $LeftWall.is_colliding() 
 
 
-func damage(amount):
-	#if invulnerability_timer.is_stopped():
-	#	invulnerability_timer.start()
+func damage(amount, object):
 	_set_health(health - amount)
-	print("damaged")
+	
+	if(object == "Bullet"):
+		match (randi() % 3 +1):
+			1:
+				$Hit1.play()
+			2:
+				$Hit2.play()
+			3:
+				$Hit3.play()
+	
+	else:
+		match (randi() % 2 +1):
+			1:
+				$Hit4.play()
+			2:
+				$Hit5.play()
+
 	
 func kill():
 	dead = true

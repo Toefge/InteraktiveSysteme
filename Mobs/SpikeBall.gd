@@ -18,5 +18,5 @@ func _on_DeleteTimer_timeout():
 func _on_SpikeBall_body_entered(body):
 	init = false
 	if(body.name == "player1" || body.name == "player2"):
-		body.damage(10)
+		body.damage(10, "SpikeBall")
 	#contacts_reported = 0

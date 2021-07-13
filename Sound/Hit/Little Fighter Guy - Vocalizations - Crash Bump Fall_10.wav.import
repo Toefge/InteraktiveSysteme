@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Little Fighter Guy - Vocalizations - Crash Bump Fall_10.wav-f1793bf0d21526426e440909f4873274.sample"
+
+[deps]
+
+source_file="res://Sound/Hit/Little Fighter Guy - Vocalizations - Crash Bump Fall_10.wav"
+dest_files=[ "res://.import/Little Fighter Guy - Vocalizations - Crash Bump Fall_10.wav-f1793bf0d21526426e440909f4873274.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

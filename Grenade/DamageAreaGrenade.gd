@@ -16,4 +16,4 @@ func remove_exception(node : Node):
 func _on_Area2D_area_entered(area):
 	if area is Hitbox:
 		if !exceptions.has(area.entity) && area.entity.has_method("damage"):
-			area.entity.damage(damage_amount) #(damage_amount, self) for testing
+			area.entity.damage(damage_amount, "Grenade") #(damage_amount, self) for testing

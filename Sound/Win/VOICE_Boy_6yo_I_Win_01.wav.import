@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/VOICE_Boy_6yo_I_Win_01.wav-37825944773a28eb92a8abacd371841e.sample"
+
+[deps]
+
+source_file="res://Sound/Win/VOICE_Boy_6yo_I_Win_01.wav"
+dest_files=[ "res://.import/VOICE_Boy_6yo_I_Win_01.wav-37825944773a28eb92a8abacd371841e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
